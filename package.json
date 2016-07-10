@@ -9,14 +9,15 @@
       "pomodoro:abort"
     ]
   },
-  "repository": "https://github.com/yoshiori/pomodoro",
+  "repository": "https://github.com/Koleok/pomodoro",
   "license": "MIT",
   "engines": {
     "atom": ">=0.174.0 <2.0.0"
   },
   "dependencies": {
     "atom-space-pen-views": "^2.0.3",
-    "queryable": "^0.3.6"
+    "queryable": "^0.3.6",
+    "ramda": "^0.21.0"
   },
   "consumedServices": {
     "status-bar": {

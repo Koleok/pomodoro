@@ -1,3 +1,4 @@
+{log} = require './logger'
 {exec, child} = require 'child_process'
 PomodoroTimer = require './pomodoro-timer'
 PomodoroView = require './pomodoro-view'
@@ -25,6 +26,7 @@ module.exports =
       "pomodoro:start": =>  @start(),
       "pomodoro:abort": => @abort()
 
+    @log = log atom.project.getPaths()
     @timer = new PomodoroTimer()
     @timer.on 'finished', => @finish()
 
@@ -35,16 +37,19 @@ module.exports =
   start: ->
     console.log "pomodoro: start"
     @timer.start()
+    @log 'start', Date.now()
     @exec atom.config.get("pomodoro.pathToExecuteWithTimerStart")
 
   abort: ->
     console.log "pomodoro: abort"
     @timer.abort()
+    @log 'abort', Date.now()
     @exec atom.config.get("pomodoro.pathToExecuteWithTimerAbort")
 
   finish: ->
     console.log "pomodoro: finish"
     @timer.finish()
+    @log 'finish', Date.now()
     @exec atom.config.get("pomodoro.pathToExecuteWithTimerFinish")
 
   exec: (path) ->
