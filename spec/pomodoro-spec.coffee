@@ -1,4 +1,4 @@
-{WorkspaceView} = require 'atom'
+{ WorkspaceView } = require 'atom'
 Pomodoro = require '../lib/pomodoro'
 
 # Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
