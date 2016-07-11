@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "atom-space-pen-views": "^2.0.3",
+    "node-zenhub": "^0.1.0",
     "queryable": "^0.3.6",
     "ramda": "^0.21.0"
   },
